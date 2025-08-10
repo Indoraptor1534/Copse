@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    
+<head><!-- dont mind all these code ,just scroll down to the bottom and there are instructions-->
+  <!-- Load Montserrat from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.webmanifest">
+
+
+ <style>
+      body {
+      font-family: "Segoe UI",serif;
+      background-color: rgb(82, 82, 82);
+    }
+    .header{
+        text-align:left;
+        padding:5px;
+        margin-left:-10px;
+        margin-top:-10px;;
+        width:110%;
+        background-color:rgb(180, 180, 180);
+        color:black;
+        font-size: 24px;
+        font-family:"Segoe UI", serif;
+        box-shadow:2px 4px 8px rgba(218, 218, 218, 0.619);
+      
+    }
+    .shortcuts{
+margin-top:100px;
+margin-left: 200px;;
+     display: flex;
+      flex-wrap: wrap;  /* allows them to go to next line */
+      gap: 200px;        /* space between items */
+      max-width: 1200px;
+    }
+    .shortcut{
+        width:200px;
+        height:200px;
+        border-radius:10px;
+         display: inline-block;
+         text-decoration: none;
+    
+    }
+    .shortcut img{
+        width:200px;
+        height:200px;
+        border-radius:10px;
+            box-shadow:2px 4px 8px black;
+            cursor:pointer;
+        transition: all 0.3s ease-in-out;
+        display :block;
+        text-decoration: none;
+    }
+    .shortcut:hover img{
+        transform :scale(1.1);
+        box-shadow:4px 6px 12px rgba(0, 0, 0, 0.3);
+        text-decoration: none;
+    }
+.shortcut span {
+      display: block;
+      margin-top: 8px; /* space between image and text */
+      font-weight: 700;
+      text-align:center;
+      font-family: "Montserrat", sans-serif;
+      color:rgb(255, 255, 255)
+   
+}
+  </style>
+
+<div class="header">
+    <h1 style="font-size:20px">Copse<sub style="font-size:10px"> _ By Radillion</sub></h1>
+</div>
+</head>
+<body>
+    <div class="shortcuts">
+<a class="shortcut" href="https://www.google.com/" target="_blank"><!--Insert your app's url here.Copyfrom here-->
+    <img src ="download.png"><!--here is the image of the shortcut,if you want another image then download a 200 by 200 px image and insert it into the copse folder and copy the name with the file type like .png or .jpg and add it here-->
+<span>Google</span><!--here is the title of the shortcut-->
+</a><!--till here to add a  new shortcut -->
+<!--now paste it below this green line but before the </div>-->
+
+ </div>
+</body>
+</html> 
