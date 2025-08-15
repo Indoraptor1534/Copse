@@ -1,0 +1,70 @@
+body {
+      font-family: "Montserrat",monospace;
+      background-color: rgb(82, 82, 82);
+      display:flexbox;
+    }
+    .header{
+            font-family: "Montserrat",monospace;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:5px;
+        margin-left:-10px;
+        margin-top:-10px;;
+        width:110%;
+        background-color:rgb(180, 180, 180);
+        color:black;
+        font-size: 24px;
+        font-family:"Segoe UI", serif;
+        box-shadow:2px 4px 8px rgba(218, 218, 218, 0.619);
+      
+    }
+.right-side {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+
+
+    .shortcuts{
+        justify-content: center;
+margin-top:100px;
+margin-left: 200px;;
+     display: flex;
+      flex-wrap: wrap;  
+      gap: 200px;       
+      max-width: 1200px;
+    }
+    .shortcut{
+        width:200px;
+        height:200px;
+        border-radius:10px;
+         display: inline-block;
+         text-decoration: none;
+    
+    }
+    .shortcut img{
+        width:200px;
+        height:200px;
+        border-radius:10px;
+            box-shadow:2px 4px 8px black;
+            cursor:pointer;
+        transition: all 0.3s ease-in-out;
+        display :block;
+        text-decoration: none;
+    }
+    .shortcut:hover img{
+        transform :scale(1.1);
+        box-shadow:4px 6px 12px rgba(0, 0, 0, 0.3);
+        text-decoration: none;
+    }
+.shortcut span {
+      display: block;
+      margin-top: 8px; 
+      font-weight: 700;
+      text-align:center;
+      font-family: "Montserrat", sans-serif;
+      color:rgb(255, 255, 255)
+   
+}
