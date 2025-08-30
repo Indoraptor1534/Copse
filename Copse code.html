@@ -11,24 +11,66 @@
     </head>
     <body>
 
-    <div class="header">
-    <h1 style="font-size:20px;font-family:'Montserrat',monospace;">
+    <div class="header" id="h">    
+    <h1 style="font-size:20px;font-family:'Montserrat',sans-serif;">
         Copse<sub style="font-size:10px;"> _ By Radillion</sub>
     </h1>
      <div class="right-side">
+        <button onclick="Over()">+</button>
+        <button onclick="Dlt() " style="background-color: red;">-</button>
+        <!--button style="background-color: rgb(57, 106, 255);background-image:url(Icons/sr.png);background-repeat: no-repeat; background-position: center;" onclick="cs()"> </button>-->
+
     <img id="tim-cook" src="Icons/Sun.png" style="width:30px; height:30px;">
     <p id="demo" style="margin:0;font-family:'Montserrat',monospace;"></p>
   </div>
     </div>
+  
+
+    <div class="addoverlay" id="overlay">
+        <div class="add">
+            <h1 style="margin-left:33%">Add Shortcut</h1>
+            <label style="margin-left:30px; font-size: 20px; font-weight: 500; "><b>Name:</b></label>
+            <input type="text" id="shortname" placeholder="Name"style="width:90%;margin-left:30px;margin-top:10px;height:45px;border-radius:8px;border: 2px solid #ccc;" >
+            <label style="margin-left:30px;margin-top: 30px; font-size: 20px; font-weight: 500; "><b>Link of the site:</b></label>
+            <input type="text" id="shortlink" placeholder="Link"style="width:90%;margin-left:30px;margin-top:10px;height:45px;border-radius:8px;border: 2px solid #ccc;" >
+            <label style="margin-left:30px;margin-top: 30px; font-size: 20px; font-weight: 500; "><b>Filepath of  the image</b></label>
+            <input type="file" id="shortimg" placeholder="File Path"style="width:90%;margin-left:30px;margin-top:10px;height:45px;" accept="image/*" >
+            <div class="ddd">
+                <button onclick="add()">Confirm</button>
+                <button style="background-color: rgb(150, 150, 150); " onclick="Bck()">Back</button>
+            </div>
+        </div>
     </div>
+    <div class="dltoverlay" id="doverlay">
+        <div class="dlt">
+            <label style="margin-left:10px; font-size: 20px; font-weight: 500;margin-top:30px; "><b>Name of the shortcut:</b></label>
+            <input type="text" id="shortdlt" placeholder="Name of the shorcut to be deleted"style="width:95%;margin-left:10px;margin-top:20px;height:65px;border-radius:8px;border: 2px solid #ccc;" >
+             <div class="dt">
+                 <button onclick="Crdt()">Confirm</button>
+                <button style="background-color: rgb(150, 150, 150); " onclick="Bck()">Back</button>
+             </div>
+
+             
+        </div>
+    </div>
+<!--<div class="cloverlay" id="coverlay">
+        <div class="cl">
+           <label style="margin-left:30px;margin-top: 30px; font-size: 20px; font-weight: 500; "><b>Color of background:</b></label>
+            <input type="color" id="bgclor">
+             <label style="margin-left:30px;margin-top: 30px; font-size: 20px; font-weight: 500; "><b>Color of header:</b></label>
+            <input type="color" id="bgcdlor">
+            
+
+        </div>      
+    </div>-->
 
         <div class="shortcuts">
-    <a class="shortcut" href="https://www.google.com/" target="_blank"><!--Insert your app's url here.Copy from here-->
-        <img src ="download.png"><!--here is the image of the shortcut,if you want another image then download a 200 by 200 px image and insert it into the copse file and copy the name and file type , .png or .jpg and add it here-->
-    <span>Google</span><!--here is the title of the shortcut-->
-    </a><!--till here to add a new shortcut -->
-    <!--now paste it below this green line but before the </div>-->
-        </div>
+
+
+ </div>
+ 
+
+
     <script  src="Js.js"></script>
 
 
@@ -36,4 +78,3 @@
 
     </body>
     </html>
-
