@@ -1,70 +1,247 @@
-body {
-      font-family: "Montserrat",monospace;
-      background-color: rgb(82, 82, 82);
-      display:flexbox;
-    }
-    .header{
-            font-family: "Montserrat",monospace;
+
+    * {
+        font-family: 'Montserrat',sans-serif;
+        box-sizing: border-box;
+    }  
+    body {
+        font-family: "Montserrat",sans-serif;
+        background-color: rgb(82, 82, 82);
+        display:flex;
+        flex-direction: column;
+margin: 0;
+        }
+        .header{
+                
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            margin-top:-10px;;
+            width:100%;
+            background-color:rgb(180, 180, 180);
+            color:black;
+            font-size: 24px;
+                
+                
+    padding: 5px   ;
+            box-shadow:2px 4px 8px rgba(218, 218, 218, 0.619);
+        }
+.cl{
+      height: 500px;
+        width:700px;
+        background-color:  white;
+        border-radius: 20px;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding:5px;
-        margin-left:-10px;
-        margin-top:-10px;;
-        width:110%;
-        background-color:rgb(180, 180, 180);
-        color:black;
-        font-size: 24px;
-        font-family:"Segoe UI", serif;
-        box-shadow:2px 4px 8px rgba(218, 218, 218, 0.619);
-      
-    }
-.right-side {
-    display: flex;
-    align-items: center;
-    gap: 10px; 
+    flex-direction:column;
 }
-
-
-
-    .shortcuts{
+.cloverlay{
+    position: fixed;      /* Cover the whole screen */
+        top: 0;
+        left: 0;
+        height: 100vh;        /* Full viewport height */
+        width: 100vw;         /* Full viewport width */
+        background-color: rgba(0, 0, 0, 0.336);
+        display: none;
+        z-index: 100;
         justify-content: center;
-margin-top:100px;
-margin-left: 200px;;
-     display: flex;
-      flex-wrap: wrap;  
-      gap: 200px;       
-      max-width: 1200px;
+        align-items: center;
+}
+        
+        .header button{
+            width:50px;
+            height:30px;
+            background-color: rgb(0, 255, 13);
+            border-radius: 10px;
+            border: none;
+            box-shadow: 1px 3px 7px rgba(0, 0, 0, 0.297);
+            transition:all 0.3s ease-in-out;
+            margin-right:10px;
+        }
+        
+        .header button:hover{
+            transform:scale(1.1);
+        }
+    .right-side {
+        display: flex;
+        align-items: center;
+        gap: 10px; 
     }
-    .shortcut{
-        width:200px;
-        height:200px;
-        border-radius:10px;
-         display: inline-block;
-         text-decoration: none;
+
+
+
+    .shortcuts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;   
+        align-items: center;      
+        gap: 50px;                 
+        margin: 100px auto 0 auto; 
+        max-width: 1200px;
+    }
+
+        .shortcut{
+            width:200px;
+            height:200px;
+            border-radius:10px;
+            display: inline-block;
+            text-decoration: none;
+        
+        }
+        .shortcut img{
+            width:200px;
+            height:200px;
+            border-radius:10px;
+                box-shadow:2px 4px 8px black;
+                cursor:pointer;
+            transition: all 0.5s ease-in-out;
+            display :block;
+            text-decoration: none;
+        }
+        .shortcut:hover img{
+            transform :scale(1.02);
+            box-shadow:3px 5px 9px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+        }
+    .shortcut span {
+        display: block;
+        margin-top: 8px; 
+        font-weight: 700;
+        text-align:center;
+        font-family: "Montserrat", sans-serif;
+        color:rgb(255, 255, 255)
     
     }
-    .shortcut img{
-        width:200px;
-        height:200px;
-        border-radius:10px;
-            box-shadow:2px 4px 8px black;
-            cursor:pointer;
+    .add{
+        height: 500px;
+        width:700px;
+        background-color:  white;
+        border-radius: 20px;
+        display: flex;
+    flex-direction:column;
+    
+
+    }
+    .dlt{
+        height: 200px;
+        width:700px;
+        background-color:  white;
+        border-radius: 20px;
+        display: flex;
+    flex-direction:column;}
+    .dt{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        height: 100px;
+        margin-top:30px;
+        justify-content: center;
+        align-items: center;
+        gap:50px;
+
+    }
+    .dt button{
+        border-radius: 10px;
+        background-color: rgb(47, 255, 54);
         transition: all 0.3s ease-in-out;
-        display :block;
-        text-decoration: none;
+        height: 40px;
+        width: 150px;
+
     }
-    .shortcut:hover img{
-        transform :scale(1.1);
-        box-shadow:4px 6px 12px rgba(0, 0, 0, 0.3);
-        text-decoration: none;
+    .dltoverlay {
+        position: fixed;      /* Cover the whole screen */
+        top: 0;
+        left: 0;
+        height: 100vh;        /* Full viewport height */
+        width: 100vw;         /* Full viewport width */
+        background-color: rgba(0, 0, 0, 0.336);
+        display: none;
+        z-index: 100;
+        justify-content: center;
+        align-items: center;
     }
-.shortcut span {
-      display: block;
-      margin-top: 8px; 
-      font-weight: 700;
-      text-align:center;
-      font-family: "Montserrat", sans-serif;
-      color:rgb(255, 255, 255)
-   
-}
+    .dt button:hover{
+        box-shadow: 2px 4px 8px black;
+        background-color: rgb(5, 255, 13);
+    }
+
+    .ddd{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        height: 100px;
+        margin-top:30px;
+        justify-content: center;
+        align-items: center;
+        gap:50px;
+
+    }
+    .ddd button{
+        border-radius: 10px;
+        background-color: rgb(47, 255, 54);
+        transition: all 0.3s ease-in-out;
+        height: 40px;
+        width: 150px;
+
+    }
+    .ddd button:hover{
+        box-shadow: 2px 4px 8px black;
+        background-color: rgb(5, 255, 13);
+    }
+    .addoverlay {
+        position: fixed;      /* Cover the whole screen */
+        top: 0;
+        left: 0;
+        height: 100vh;        /* Full viewport height */
+        width: 100vw;         /* Full viewport width */
+        background-color: rgba(0, 0, 0, 0.336);
+        display: none;
+        z-index: 100;
+        justify-content: center;
+        align-items: center;
+    }
+    /* Style the input box */
+    input[type="file"] {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 6px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    }
+
+    /* Style the actual "Choose file" button */
+    input[type="file"]::file-selector-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    margin-right: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: background 0.2s ease;
+    }
+
+    /* Hover effect for button */
+    input[type="file"]::file-selector-button:hover {
+    background: #45a049;
+    }
+   /*#bgclor{
+       -webkit-appearance: none; 
+-moz-appearance: none;    
+appearance: none;       
+        
+        border-radius: 5px;
+        width:50px;
+        height: 50px;
+        border:none;
+        background-color:rgba(255, 255, 255, 0);
+        margin-top:20px;
+        margin-left:20px;
+
+    }
+    #bgclor::-webkit-color-swatch{
+        border-radius: 10px;
+    } */
