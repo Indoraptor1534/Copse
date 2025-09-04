@@ -2,8 +2,8 @@
     <html>
     <head>
     <!-- Load Montserrat from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
+   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Copse</title>
         <link rel="stylesheet" href="Style.css">
@@ -12,22 +12,26 @@
     <body>
 
     <div class="header" id="h">    
-    <h1 style="font-size:20px;font-family:'Montserrat',sans-serif;">
+    <h1 style="font-size:20px;" class="h">
         Copse<sub style="font-size:10px;"> _ By Radillion</sub>
     </h1>
      <div class="right-side">
-        <button onclick="Over()">+</button>
-        <button onclick="Dlt() " style="background-color: red;">-</button>
+        <button onclick="Over()" class="plus">+</button>
+        <button onclick="Dlt()" class="minus">-</button>
+        <button  onclick="Cs()" class="cs">
+            <img src="Icons/sr.png" style="width:10px; height: 10px;">
+        </button>
         <!--button style="background-color: rgb(57, 106, 255);background-image:url(Icons/sr.png);background-repeat: no-repeat; background-position: center;" onclick="cs()"> </button>-->
 
-    <img id="tim-cook" src="Icons/Sun.png" style="width:30px; height:30px;">
+    <img id="tim-cook" src="Icons/Sun.png" style="width:30px; height:30px;filter:brightness(0);">
     <p id="demo" style="margin:0;font-family:'Montserrat',monospace;"></p>
+   
   </div>
     </div>
   
 
-    <div class="addoverlay" id="overlay">
-        <div class="add">
+    <div class="overlay" id="aoverlay">
+        <div class="add" id="ad">
             <h1 style="margin-left:33%">Add Shortcut</h1>
             <label style="margin-left:30px; font-size: 20px; font-weight: 500; "><b>Name:</b></label>
             <input type="text" id="shortname" placeholder="Name"style="width:90%;margin-left:30px;margin-top:10px;height:45px;border-radius:8px;border: 2px solid #ccc;" >
@@ -41,17 +45,27 @@
             </div>
         </div>
     </div>
-    <div class="dltoverlay" id="doverlay">
-        <div class="dlt">
+    <div class="overlay" id="doverlay">
+        <div class="dlt" id="dl">
             <label style="margin-left:10px; font-size: 20px; font-weight: 500;margin-top:30px; "><b>Name of the shortcut:</b></label>
             <input type="text" id="shortdlt" placeholder="Name of the shorcut to be deleted"style="width:95%;margin-left:10px;margin-top:20px;height:65px;border-radius:8px;border: 2px solid #ccc;" >
              <div class="dt">
-                 <button onclick="Crdt()">Confirm</button>
+                 <button onclick="Crdt()" id="Crd">Confirm</button>
                 <button style="background-color: rgb(150, 150, 150); " onclick="Bck()">Back</button>
              </div>
 
              
         </div>
+    </div>
+    <div class="overlay" id="coverlay">
+        <div class="Cd" id="PS">
+<h1 style="margin-left: 3px;">Change the background</h1>
+<label style="margin-left:10px; font-size: 20px; font-weight: 500;margin-top:30px; "><b>Background</b></label>
+            <input type="file" id="Bg" placeholder="Choose your Background"style="width:95%;margin-left:10px;margin-top:20px;height:50px;border-radius:8px;border: 2px solid #ccc;"  accept="image/*">
+<div class="dt">
+                 <button onclick="Crd()">Confirm</button>
+                <button style="background-color: rgb(150, 150, 150); " onclick="Bck()">Back</button>
+             </div>
     </div>
 <!--<div class="cloverlay" id="coverlay">
         <div class="cl">
@@ -64,10 +78,8 @@
         </div>      
     </div>-->
 
-        <div class="shortcuts">
-
-
- </div>
+ 
+ 
  
 
 
