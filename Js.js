@@ -1,3 +1,5 @@
+
+
   let clct=0;
   let clcc=0;
   let link="0"
@@ -9,8 +11,17 @@
   let g=0;
       let mcontainer=document.querySelector("body");
       let row = null;
+      let dltname="";
+      let shrts="";
+      let shrt=0;
+      let span="";
+      let idVal=null;
+      let targetShortcut = null; 
+      
 
-  window.onload = Ld;
+  window.onload = Ld();
+
+
 
   function showtime(){
     const days=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
@@ -32,15 +43,64 @@
   function Over(){
     document.getElementById("aoverlay").style.display="flex";
     document.getElementById("ad").style.display="flex";
+    document.getElementById("ad").offsetHeight;
+    document.getElementById("ad").classList.add("active");
     
   }
   function Bck(){
-    document.getElementById("doverlay").style.display="none";
-    document.getElementById("aoverlay").style.display="none";
-    document.getElementById("ad").style.display="none";
-    document.getElementById("dl").style.display="none";
-    document.getElementById("coverlay").style.display="none";
-    document.getElementById("PS").style.display="none";
+
+    
+    
+    if(document.getElementById("dialog").classList.contains("active")){
+
+
+        document.getElementById("dialog").classList.remove("active");
+        document.getElementById("dialog").offsetHeight;
+        document.getElementById("dialog").classList.add("gone");
+       setTimeout(() => {
+            document.getElementById("dialog").style.display = "none";
+            document.getElementById("roverlay").style.display = "none";
+       },500);
+     }
+      
+    if(document.getElementById("ad").classList.contains("active")){
+
+      document.getElementById("ad").classList.remove("active");
+      document.getElementById("ad").offsetHeight;
+      document.getElementById("ad").classList.add("gone");
+      setTimeout(() => {
+           document.getElementById("ad").style.display = "none";
+           document.getElementById("aoverlay").style.display = "none";
+      },300);
+    }
+
+     if(document.getElementById("dl").classList.contains("active")){
+
+      document.getElementById("dl").classList.remove("active");
+      document.getElementById("dl").offsetHeight;
+      document.getElementById("dl").classList.add("gone");
+      setTimeout(() => {
+           document.getElementById("dl").style.display = "none";
+           document.getElementById("doverlay").style.display = "none";
+           document.getElementById("dl").classList.add("gone");
+      },300);
+    }
+
+    
+     if(document.getElementById("Ps").classList.contains("active")){
+
+      document.getElementById("Ps").classList.remove("active");
+      document.getElementById("Ps").offsetHeight;
+      document.getElementById("Ps").classList.add("gone");
+      setTimeout(() => {
+           document.getElementById("Ps").style.display = "none";
+           document.getElementById("coverlay").style.display = "none";
+           document.getElementById("Ps").classList.remove("gone");
+      },300);
+    }
+   
+
+   
    
     
   }
@@ -52,7 +112,7 @@
     let file = fileInput.files[0];
 
     if (!link || !nm || !file) {
-      alert("One of the fields is empty!");
+      Alrte()
       return;
     }
 
@@ -108,6 +168,8 @@
   }
 
   function Ld() {
+   
+           
     clct = parseInt(localStorage.getItem("cnt") || "0", 10);
     let clcc = 1;
     ids = []; // make sure this is defined globally
@@ -169,45 +231,45 @@
 
 
   function Dlt(){
-  
+  dl.classList.remove("gone");
 
-    document.getElementById("doverlay").style.display="flex";
-  document.getElementById("dl").style.display="flex";
+document.getElementById("doverlay").style.display="flex";
+    document.getElementById("dl").style.display="flex";
+    document.getElementById("dl").offsetHeight;
+    document.getElementById("dl").classList.add("active");
+    
   }
 
   function Crdt(){
-    let dltname = document.getElementById("shortdlt").value;
-    let shrts = document.querySelectorAll(".shortcut");
+  dltname = document.getElementById("shortdlt").value;
+  shrts = document.querySelectorAll(".shortcut");
 
-    for (let shrt of shrts){
-      let span = shrt.querySelector("span");
+    for (shrt of shrts){
+      span = shrt.querySelector("span");
       if(span && span.textContent.trim() === dltname){
-        let idVal =shrt.id ;
-        let b= confirm("Are you sure you want to delete "+dltname+"?")
-  if (b) {
-      shrt.remove();
+         targetShortcut = shrt;               
+      idVal = parseInt(shrt.id, 10); 
 
-      localStorage.removeItem("lnk" + idVal);
-      localStorage.removeItem("img" + idVal);
-      localStorage.removeItem("nm" + idVal);
-      document.querySelectorAll('.shortcuts:empty').forEach(r => r.remove());
-      row = null;
-
-      Bck();
-
-      let idx = ids.indexOf(idVal);
-      if (idx !== -1) ids.splice(idx, 1);
-  }
+         Dia();
+         break;
+    
+        
       }
     }
-
   }
+
+  
   function Cs(){
-    document.getElementById("coverlay").style.display="flex";
-      document.getElementById("PS").style.display="flex";
+
+document.getElementById("coverlay").style.display="flex";
+    document.getElementById("Ps").style.display="flex";
+    document.getElementById("Ps").offsetHeight;
+    document.getElementById("Ps").classList.add("active");
+    
+  }
     
 
-  }
+  
 function Crd() {
   // Get the file input element
   let fileInput = document.getElementById("Bg");
@@ -238,7 +300,7 @@ function Crd() {
   // triggers reading the file
 }}
 else{
-  alert("Choose A File")
+  Alrtf()
 }}
 
 
@@ -248,6 +310,7 @@ document.addEventListener("keydown",function(event){
     let ade=document.getElementById("aoverlay");
     let m=document.getElementById("doverlay");
     let c=document.getElementById("coverlay");
+    let o=document.getElementById("dialog");
      event.preventDefault();
     if(ade.style.display=== "flex"){
 
@@ -261,6 +324,8 @@ document.addEventListener("keydown",function(event){
       Crd();
     }
 
+
+
   }
 }
 )
@@ -272,6 +337,112 @@ document.addEventListener("keydown",function(event){
     Bck();  
   }
 })
+  function Bva(){
+
+     targetShortcut.remove();
+
+      localStorage.removeItem("lnk" + idVal);
+      localStorage.removeItem("img" + idVal);
+      localStorage.removeItem("nm" + idVal);
+      document.querySelectorAll('.shortcuts:empty').forEach(r => r.remove());
+      row = null;
+     
+ let idx = ids.indexOf(idVal);
+      if (idx !== -1) ids.splice(idx, 1);
+     
+      targetShortcut = null;
+      idVal = null;
+
+    
+
+ Bck();
+    
+  
+     
+  }
+  function Dia() {
+    document.getElementById("doverlay").style.display = "none";
+    document.getElementById("dl").style.display = "none";
+    document.getElementById("dltw").textContent = `Click Confirm to delete ${dltname}`;
+
+     document.getElementById("roverlay").style.display = "flex";
+    document.getElementById("dialog").style.display = "flex";
+    document.getElementById("dialog").offsetHeight;
+    document.getElementById("dialog").classList.add("active");
+   }
+
+
+   function Alrtf(){
+    document.getElementById("alert").classList.remove("gone");
+    document.getElementById("alert").classList.remove("active");
+    document.getElementById("alert").style.display="flex";
+    document.getElementById("alertlay").style.display="flex";
+    document.getElementById("alert").offsetHeight;
+    document.getElementById("alert").classList.add("active");
+   document.getElementById("alrtw").textContent="Please Select a File";
+
+
+
+   setTimeout(() => {
+    console.log("While we wait lets acknowledge how lucky of a time it is to be alive,with trees,birds,Tom Cruise,cars etc.");
+
+   document.getElementById("alert").classList.add("gone");
+   },2000);
+
+    
+   setTimeout(() => {
+  document.getElementById("alert").style.display = "none";
+     document.getElementById("alertlay").style.display = "none";},2300);
+
+   
+
+    
+ 
+
+
+   }
+   function Alrte(){
+    document.getElementById("alert").classList.remove("gone");
+    document.getElementById("alert").classList.remove("active");
+    document.getElementById("alert").style.display="flex";
+    document.getElementById("alertlay").style.display="flex";
+    document.getElementById("alert").offsetHeight;
+    document.getElementById("alert").classList.add("active");
+   document.getElementById("alrtw").textContent="Some fields are empty  or invalid";
+
+
+
+   setTimeout(() => {
+    console.log("While we wait lets play a game of who can hold their breath the longest,I can hold it for 2.3 seconds(quite a feat),what about you?");
+
+   document.getElementById("alert").classList.add("gone");
+   },2000);
+
+    
+   setTimeout(() => {
+  document.getElementById("alert").style.display = "none";
+     document.getElementById("alertlay").style.display = "none";},2300);
+
+   
+
+    
+ 
+
+
+   }
+   function Ucl(){
+    document.getElementById("updt").classList.remove("active");
+      document.getElementById("updt").offsetHeight;
+      document.getElementById("updt").classList.add("gone");
+      setTimeout(() => {
+           document.getElementById("updt").style.display = "none";
+           document.getElementById("uoverlay").style.display = "none";
+           document.getElementById("updt").classList.remove("gone");
+      },300);
+    }
+   
+ 
+ 
 
 
 
