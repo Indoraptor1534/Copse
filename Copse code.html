@@ -4,7 +4,7 @@
     <!-- Load Montserrat from Google Fonts -->
    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0">
     <title>Copse</title>
         <link rel="stylesheet" href="Style.css">
 
@@ -58,7 +58,7 @@
         </div>
     </div>
     <div class="overlay" id="coverlay">
-        <div class="Cd" id="PS">
+        <div class="Bg" id="Ps">
 <h1 style="margin-left: 3px;">Change the background</h1>
 <label style="margin-left:10px; font-size: 20px; font-weight: 500;margin-top:30px; "><b>Background</b></label>
             <input type="file" id="Bg" placeholder="Choose your Background"style="width:95%;margin-left:10px;margin-top:20px;height:50px;border-radius:8px;border: 2px solid #ccc;"  accept="image/*">
@@ -67,23 +67,45 @@
                 <button style="background-color: rgb(150, 150, 150); " onclick="Bck()">Back</button>
              </div>
     </div>
-<!--<div class="cloverlay" id="coverlay">
-        <div class="cl">
-           <label style="margin-left:30px;margin-top: 30px; font-size: 20px; font-weight: 500; "><b>Color of background:</b></label>
-            <input type="color" id="bgclor">
-             <label style="margin-left:30px;margin-top: 30px; font-size: 20px; font-weight: 500; "><b>Color of header:</b></label>
-            <input type="color" id="bgcdlor">
-            
-
-        </div>      
-    </div>-->
+    </div>
+<div class="overlay" id="roverlay">
+    <div class="dialog" id="dialog">
+        <h1 id="dltw"style ="margin-left:10px;font-weight: 500; font-size: 20px;">Are you sure you want to delete?</h1>
+        <div class="Cnnf">
+            <button onclick="Bva()" id="Crd">Confirm</button>
+            <button style="background-color: rgb(150, 150, 150); " onclick="Bck()">Back</button>
+        </div>
+    </div>
+</div>
+<div class="overlay" id="alertlay">
+<div class="dialog" id="alert">
+     <h1 id="alrtw"style ="margin-left:10px;font-weight: 500; font-size: 25px;"></h1>
+</div>
+</div>
 
  
  
- 
 
+
+ <div class="uoverlay" id="uoverlay">
+<div class="updt" id="updt">
+<div class="clbutton" id="clbutton" onclick="Ucl()">
+  </div>
+ <div class="title" id="updateTitle"></div>
+  <div class="changes" id="updateChanges">
+
+    
+  </div>
+  <div class="buttns"> 
+
+    <button class="ubt" onclick="Dw()">Download Now</button>
+    <button class="ubt" style="background-color: gray;" onclick="Ig()">Ignore</button>
+    </div>
+    </div>
+    </div>
 
     <script  src="Js.js"></script>
+    <script src="UpdateChecker.js"></script>
 
 
 
