@@ -68,7 +68,7 @@ min-height: 100vh;
             border-radius: 10px;
             border: none;
             box-shadow: 1px 3px 7px rgba(0, 0, 0, 0.297);
-            transition:all 0.3s ease-in-out;
+            transition:all 0.3s ease;
             margin-right:10px;
             cursor: pointer;
         }
@@ -143,7 +143,7 @@ min-height: 100vh;
             border-radius:10px;
             display: inline-block;
             text-decoration: none;
-        transition: all 0.5s ease;
+        transition: all 0.3s ease;
         }
         .shortcut img{
             width:inherit;
@@ -176,8 +176,16 @@ min-height: 100vh;
         border-radius: 20px;
         display: none;
     flex-direction:column;
+    transition: transform 0.3s ease;
+    transform: translateX(-800px);
     
 
+    }
+    .add.gone{
+        transform: translateX(-1500px);
+    }
+    .add.active{
+        transform: translateX(0px);
     }
     .dlt{
         height: 200px;
@@ -185,7 +193,17 @@ min-height: 100vh;
         background-color:  white;
         border-radius: 20px;
         display: none;
-    flex-direction:column;}
+    flex-direction:column;
+transition: transform 0.3s ease;
+    transform: translateX(1500px);
+
+}
+    .dlt.active{
+        transform: translateX(0px);
+    }
+    .dlt.gone{
+        transform: translateX(1500px);
+    }
     .dt{
         width: 100%;
         display: flex;
@@ -200,15 +218,17 @@ min-height: 100vh;
     .dt button{
         border-radius: 10px;
         background-color: rgb(47, 255, 54);
-        transition: all 0.3s ease-in-out;
+        transition: all 0.5s ease-in-out;
         height: 40px;
         width: 150px;
+   border: none;
+        cursor: pointer;
 
     }
     
     .dt button:hover{
-        box-shadow: 2px 4px 8px black;
-        background-color: rgb(5, 255, 13);
+    transform: translateY(-10px);
+       
     }
 
     .ddd{
@@ -225,14 +245,18 @@ min-height: 100vh;
     .ddd button{
         border-radius: 10px;
         background-color: rgb(47, 255, 54);
-        transition: all 0.3s ease-in-out;
+        transition: all 0.5s ease;
         height: 40px;
         width: 150px;
 
+        cursor: pointer;
+        border: none;
+
     }
     .ddd button:hover{
-        box-shadow: 2px 4px 8px black;
-        background-color: rgb(5, 255, 13);
+        
+        transform: translateY(-10px);
+       
     }
     .overlay {
         position: fixed;      /* Cover the whole screen */
@@ -240,7 +264,7 @@ min-height: 100vh;
         left: 0;
         height: 100vh;        /* Full viewport height */
         width: 100vw;         /* Full viewport width */
-        background-color: rgba(0, 0, 0, 0.336);
+        background-color: rgba(0, 0, 0, 0.192);
         display: none;
         z-index: 100;
         justify-content: center;
@@ -277,31 +301,185 @@ min-height: 100vh;
     }
 
 
-   .Cd {
+   .Bg {
     width:700px;
     height: 400px;
     display:none;
     flex-direction: column;
     background-color: white;
     border-radius:10px;
-    
+     transform: translateY(-800px);
+    transition:transform 0.3s ease;
 
     }
-
-   /*#bgclor{
-       -webkit-appearance: none; 
--moz-appearance: none;    
-appearance: none;       
-        
-        border-radius: 5px;
-        width:50px;
-        height: 50px;
-        border:none;
-        background-color:rgba(255, 255, 255, 0);
-        margin-top:20px;
-        margin-left:20px;
+    .Bg.active{
+        transform: translateY(0);
 
     }
-    #bgclor::-webkit-color-swatch{
+    .Bg.gone{
+        transform: translateY(-800px);
+
+    }
+    .dialog{
+        width:700px;
+        height: 100px;
+        background-color: rgb(255, 255, 255);
         border-radius: 10px;
-    } */
+        display:none;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+    transition: transform 0.3s ease;;
+        
+
+    }
+    .dialog.active{
+        transform: translateY(-450px);
+    }
+    .dialog.gone{
+        transform: translateY(-800px);
+    }
+    .Cnnf{
+        width:inherit;
+        height: 50px;
+        display:flex;
+        flex-direction: row;
+         justify-content: center;
+         gap:200px;
+        
+        
+    }
+  .Cnnf button{
+        border-radius: 10px;
+        background-color: rgb(0, 253, 8);
+       cursor: pointer;
+        transition: all 0.5s ease;
+        height: 40px;
+        width: 150px;
+       
+       
+
+    }
+      .Cnnf button:hover{
+   transform: translateY(-10px);
+        
+    }
+.uoverlay{
+    position: fixed;      /* Cover the whole screen */
+        top: 0;
+        left: 0;
+        height: 100vh;        /* Full viewport height */
+        width: 100vw;         /* Full viewport width */
+        background-color: rgba(255, 255, 255, 0);
+        display: none;
+        z-index: 100;
+        justify-content: flex-end;
+        align-items: top;
+}
+
+    .updt{
+        width:500px;
+        height: 70px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        transition: all 0.5s ease;
+        z-index:100;
+        overflow: hidden;
+        margin-top:-70px;
+        transition: all 0.3s ease;
+        position: relative;
+        display:flex;
+        align-items: center;
+        
+
+
+
+    }
+    .updt:hover{
+        height: 200px;
+       
+    }
+    .title {
+        
+        padding: 10px;
+  position: absolute;          
+  top: 50%;                  
+  left: 50%;     
+  width:100%;             
+  transform: translate(-50%, -50%); 
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  z-index: 10;  
+ transition: top 0.3s ease;
+ display: flex;
+ justify-content:center ;
+ transition: all 0.5s ease-in;
+}
+    .changes {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+ justify-content:center ;
+ padding: 10px;
+  margin-top:70px;  
+   
+}
+.updt:hover .title{
+ transform: translate(-50%, -170%);
+}
+
+.updt:hover .changes {
+  opacity: 1;
+}
+ 
+ 
+
+    .updt.active{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+         margin-top:70px;
+    }
+    .clbutton{
+        width:10px;
+        height: 10px;
+        background-color: red;
+        border-radius:50%;
+        margin-left:-97%;
+        margin-top:5px;
+        position:absolute;
+cursor: pointer;
+    }
+ 
+    .updt.gone{
+        margin-top:-200px;
+       
+    }
+.buttns{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+    margin-top:20px;
+
+    flex-direction: row;
+    
+}
+.ubt{
+        margin-bottom:50px;
+   width:150px;
+    height:30px;
+    border-radius:10px;
+    background-color: rgb(3, 216, 10);
+    transition: all 0.5s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:none;
+}
+.ubt:hover{
+    transform: translateY(-10px);
+}
